@@ -6,13 +6,13 @@
 package app;
 
 /**
- *
+ * Representação de uma lampada
  * @author Diego
  */
 public class Lampada {
     
     private boolean ligado = false;
-    private int intensidade = 0;
+    private float intensidade = 0;
     private String cor = "amarelo";
     
     public boolean EstaLigado(){
@@ -22,11 +22,15 @@ public class Lampada {
             return false;
     }
     
-    public int getIntensidade(){
+    /**
+     * Recebe a intensidade da Lampada
+     * @return Retorna um valor de [0..1]
+     */
+    public float getIntensidade(){
         return intensidade;
     }
     
-    public void setIntensidade(int valor){
+    public void setIntensidade(float valor){
         this.intensidade = valor;
     }
     
@@ -38,10 +42,25 @@ public class Lampada {
         this.cor = cor;
     }
     
-    public Lampada(){}
+    /**
+     * 
+     */
+    public Lampada(){
+        this(false);
+    }
     
     public Lampada(boolean ligado){
+        this(ligado, 0.7f);
+    }
+    
+    public Lampada(boolean ligado, float intensidade){
+        this(ligado, intensidade, "amarelo");
+    }
+    
+    public Lampada(boolean ligado, float intensidade, String cor){
         this.ligado = ligado;
+        this.intensidade = intensidade;
+        this.cor = cor;
     }
     
     public void Ligar(){
