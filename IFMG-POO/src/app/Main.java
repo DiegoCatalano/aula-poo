@@ -5,6 +5,11 @@
  */
 package app;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Diego
@@ -16,12 +21,26 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        Lampada l1 = new Lampada();
+        //Criei 2 clientes
+        List<Cliente> clientes = new ArrayList<>();
+
+        
+        for (int i = 0; i < 2; i++) {
+            
+            String nome = JOptionPane.showInputDialog("Digite o nome");
+            
+            
+        }
+        
+        
+        
+        int stop = 0;
+        
         
     }
     
-    public void mudarIntensidade(Lampada lamp){
-        lamp.setIntensidade(1);
-    }
+//    public void mudarIntensidade(Lampada lamp){
+//        lamp.setIntensidade(1);
+//    }
     
 }
