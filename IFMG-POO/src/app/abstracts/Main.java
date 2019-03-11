@@ -16,8 +16,10 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        Motorista fun = new Motorista("nome", 10);
-        Vendedor vend = new Vendedor("nome", 10);
+        AbstractFuncionario fun = new Motorista("nome", 10);
+        AbstractFuncionario vend = new Vendedor("nome", 10);
+        
+        int stop = 0;
         
 //        Motorista motorista = new Motorista("cidadao", 10);
 //        Vendedor vendedor = new Vendedor("nome", 10);

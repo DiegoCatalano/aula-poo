@@ -25,22 +25,34 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        //Criei 2 clientes
-        List<Cliente> clientes = new ArrayList<>();
+        //Criar as listas de cliente e produto
+        List<Integer> numeros = new ArrayList<Integer>();
         
-        for (int i = 0; i < 2; i++) {
-            
-            String nome = input("Digite o nome");
-            String cpf = input("Digite o cpf");
-            int idade = Integer.valueOf(input("Digite a idade"));
-            String telefone = input("Digite o telefone");
-            
-            clientes.add(new Cliente(nome, cpf, idade, telefone));
-            
-        }
+        numeros.add(0);
+        numeros.add(1);
+        numeros.add(2);
+        
+        numeros.remove(1);
         
         
-        int stop = 0;
+        
+        
+//        String op = "";
+//        while (!op.equals("0")){
+//            
+//            System.out.println("Sistema de vendas");
+//            System.out.println("Digite uma opção");
+//            System.out.println();
+//            System.out.println("0 - Sair");
+//            System.out.println("1 - Cadastrar cliente");
+//            System.out.println("2 - Cadastrar produto");
+//            System.out.println();
+//            System.out.print("-> ");
+//            
+//            op = input("Digite a opção ?");
+//            
+//            
+//        }
         
         
     }

@@ -14,7 +14,6 @@ public class Cliente {
     private String nome;
     private String cpf;
     private int idade;
-    private String telefone;
 
     public String getNome() {
         return nome;
@@ -39,22 +38,13 @@ public class Cliente {
     public void setIdade(int idade) {
         this.idade = idade;
     }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
     
     public Cliente(){}
 
-    public Cliente(String nome, String cpf, int idade, String telefone) {
+    public Cliente(String nome, String cpf, int idade) {
         this.nome = nome;
         this.cpf = cpf;
         this.idade = idade;
-        this.telefone = telefone;
     }
     
 }

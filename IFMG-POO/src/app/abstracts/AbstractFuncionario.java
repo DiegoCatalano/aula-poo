@@ -14,6 +14,8 @@ public abstract class AbstractFuncionario {
     protected String nome;
     protected int idade;
     protected double salario;
+    
+    public abstract String Tipo();
 
     public double getSalario() {
         return salario;

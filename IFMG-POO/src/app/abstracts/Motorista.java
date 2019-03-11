@@ -16,9 +16,12 @@ public class Motorista extends AbstractFuncionario{
         this.idade = idade;
     }
 
-    public int XX(){
-        return 0;
+    @Override
+    public String Tipo() {
+        return "Motorista";
     }
+
+    
     
     
     

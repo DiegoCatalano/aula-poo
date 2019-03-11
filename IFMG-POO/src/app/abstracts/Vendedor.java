@@ -20,5 +20,12 @@ public class Vendedor extends AbstractFuncionario{
     public double getBonificacao() {
         return this.salario * 1.2;
     }
+
+    @Override
+    public String Tipo() {
+        return "Vendedor";
+    }
+    
+    
     
 }
