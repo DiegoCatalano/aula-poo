@@ -16,8 +16,14 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        AbstractFuncionario fun = new Motorista("nome", 10);
-        AbstractFuncionario vend = new Vendedor("nome", 10);
+        Motorista fun = new Motorista();
+        Vendedor vend = new Vendedor("x", 10);
+        
+        String dado = fun.Tipo();
+        
+        String nome = vend.nome;
+        
+        System.out.println(nome);
         
         int stop = 0;
         

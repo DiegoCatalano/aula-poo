@@ -9,20 +9,23 @@ package app.abstracts;
  *
  * @author Diego
  */
-public class Motorista extends AbstractFuncionario{
-
-    public Motorista(String nome, int idade) {
-        this.nome = nome;
-        this.idade = idade;
-    }
+public class Motorista extends Funcionario{
 
     @Override
     public String Tipo() {
         return "Motorista";
     }
+    
 
-    
-    
+//    public Motorista(String nome, int idade) {
+//        this.nome = nome;
+//        this.idade = idade;
+//    }
+
+//    @Override
+//    public String Tipo() {
+//        return "Motorista";
+//    }
     
     
 }

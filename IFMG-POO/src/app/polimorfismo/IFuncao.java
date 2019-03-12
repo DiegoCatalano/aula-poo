@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package app.abstracts;
+package app.polimorfismo;
 
 /**
  *
  * @author Diego
  */
-public interface ITeste {
-    public String Tipo();
+public interface IFuncao {
+    double Calcular(double[] x);
 }

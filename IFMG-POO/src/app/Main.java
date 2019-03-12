@@ -26,39 +26,26 @@ public class Main {
     public static void main(String[] args) {
         
         //Criar as listas de cliente e produto
-        List<Integer> numeros = new ArrayList<Integer>();
+        List<Cliente> clientes = new ArrayList<>();
         
-        numeros.add(0);
-        numeros.add(1);
-        numeros.add(2);
-        
-        numeros.remove(1);
-        
-        
-        
-        
-//        String op = "";
-//        while (!op.equals("0")){
-//            
-//            System.out.println("Sistema de vendas");
-//            System.out.println("Digite uma opção");
-//            System.out.println();
-//            System.out.println("0 - Sair");
-//            System.out.println("1 - Cadastrar cliente");
-//            System.out.println("2 - Cadastrar produto");
-//            System.out.println();
-//            System.out.print("-> ");
-//            
-//            op = input("Digite a opção ?");
-//            
-//            
-//        }
-        
+        String op = "";
+        while (!op.equals("0")){
+            
+            System.out.println("Sistema de vendas");
+            System.out.println("Digite uma opção");
+            System.out.println();
+            System.out.println("0 - Sair");
+            System.out.println("1 - Cadastrar cliente");
+            System.out.println("2 - Cadastrar produto");
+            System.out.println();
+            System.out.print("-> ");
+            
+            op = input("Digite a opção ?");
+            
+            //clientes.add(new Cliente("fulano", "12312312300", 20));
+            
+        }
         
     }
-    
-//    public void mudarIntensidade(Lampada lamp){
-//        lamp.setIntensidade(1);
-//    }
     
 }

@@ -9,13 +9,13 @@ package app.abstracts;
  *
  * @author Diego
  */
-public abstract class AbstractFuncionario {
+public class Funcionario implements ITeste{
     
     protected String nome;
     protected int idade;
     protected double salario;
     
-    public abstract String Tipo();
+//    public abstract String Tipo();
 
     public double getSalario() {
         return salario;
@@ -27,6 +27,11 @@ public abstract class AbstractFuncionario {
     
     public double getBonificacao(){
         return this.salario * 1.1;
+    }
+
+    @Override
+    public String Tipo() {
+        return "Funcionario";
     }
     
 }

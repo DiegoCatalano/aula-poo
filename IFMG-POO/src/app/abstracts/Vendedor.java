@@ -9,7 +9,7 @@ package app.abstracts;
  *
  * @author Diego
  */
-public class Vendedor extends AbstractFuncionario{
+public class Vendedor extends Funcionario{
 
     public Vendedor(String nome, int idade) {
         this.nome = nome;
@@ -20,11 +20,13 @@ public class Vendedor extends AbstractFuncionario{
     public double getBonificacao() {
         return this.salario * 1.2;
     }
+    
+    
 
-    @Override
-    public String Tipo() {
-        return "Vendedor";
-    }
+//    @Override
+//    public String Tipo() {
+//        return "Vendedor";
+//    }
     
     
     
