@@ -9,7 +9,7 @@ package app.sistema1;
  *
  * @author Diego
  */
-public class Produto {
+public class Produto implements Comparable{
     private String desc;
     private double preco;
 
@@ -32,6 +32,11 @@ public class Produto {
     public Produto(String desc, double preco) {
         this.desc = desc;
         this.preco = preco;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return Double.compare(preco, ((Produto)o).getPreco());
     }
     
     

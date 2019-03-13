@@ -6,7 +6,8 @@
 package app.sistema1;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -31,6 +32,17 @@ public class Main {
     public static void main(String[] args) {
         
         clientes.add(new Cliente("diego", "123", 20));
+        produtos.add(new Produto("lapis", 30));
+        produtos.add(new Produto("caneta", 20));
+        produtos.add(new Produto("borracha", 50));
+        
+        //Collections.sort(produtos);
+        Collections.sort(produtos, new Comparator<Produto>() {
+            @Override
+            public int compare(Produto o1, Produto o2) {
+                return Double.compare(o1.getPreco(), o2.getPreco());
+            }
+        });
         
         //Exemplo de conversao
         int x = 10;
@@ -49,6 +61,7 @@ public class Main {
             System.out.println("3 - Consultar cliente por cpf");
             //Listar as descricoes de todos os produtos em que o valor informado seja maior do que x
             System.out.println("4 - Listar produtos >= x");
+            //TODO: Cadastrar venda para os clientes
             
             op = input("Digite uma opção ?");
             switch(op){
@@ -59,7 +72,7 @@ public class Main {
                     CadastrarProduto();
                 break;
                 case "3":
-                    ConsultarCpf();
+                    Cliente cli = ConsultarCpf();
                 break;
                 case "4":
                     ListarProdutos();
@@ -82,26 +95,41 @@ public class Main {
         
     }
 
-    private static String ConsultarCpf() {
+    private static Cliente ConsultarCpf() {
         
         String cpf = input("Digite o cpf do cidadao");
         
         for (Cliente cliente : clientes) {
             if(cliente.getCpf().equals(cpf)){
-                return cliente.getNome();
+                return cliente;
             }
         }
         
-        return "Cliente n cad.";
+        return null;
         
     }
 
     private static void CadastrarProduto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String descricao = input("Digite a descricao do produto");
+        double preco = Double.valueOf(input("Digite o preco do produto"));
+        
+        produtos.add(new Produto(descricao, preco));
     }
 
-    private static void ListarProdutos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private static List<Produto> ListarProdutos() {
+        
+        double preco = Double.valueOf(input("Digite o preco do produto a ser listado"));
+        
+        List<Produto> aux = new ArrayList<>();
+        for (Produto produto : produtos) {
+            if(produto.getPreco() >= preco){
+                aux.add(produto);
+            }
+        }
+        
+        return aux;
+        
+        
     }
     
 }
