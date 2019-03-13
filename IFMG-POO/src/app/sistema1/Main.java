@@ -6,6 +6,7 @@
 package app.sistema1;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -18,6 +19,7 @@ public class Main {
     
     //Declarei a lista de clientes fora do escopo da main
     static List<Cliente> clientes = new ArrayList<>();
+    static List<Produto> produtos = new ArrayList<>();
     
     public static String input(String titulo){
         return JOptionPane.showInputDialog(titulo);
@@ -27,6 +29,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        clientes.add(new Cliente("diego", "123", 20));
         
         //Exemplo de conversao
         int x = 10;
@@ -51,6 +55,15 @@ public class Main {
                 case "1":
                     CadastrarCliente();
                 break;
+                case "2":
+                    CadastrarProduto();
+                break;
+                case "3":
+                    ConsultarCpf();
+                break;
+                case "4":
+                    ListarProdutos();
+                break;
             }
             
             
@@ -67,6 +80,28 @@ public class Main {
         clientes.add(new Cliente(nome, cpf, idade));
         System.out.println("Clientes cadastrados: " + clientes.size());
         
+    }
+
+    private static String ConsultarCpf() {
+        
+        String cpf = input("Digite o cpf do cidadao");
+        
+        for (Cliente cliente : clientes) {
+            if(cliente.getCpf().equals(cpf)){
+                return cliente.getNome();
+            }
+        }
+        
+        return "Cliente n cad.";
+        
+    }
+
+    private static void CadastrarProduto() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static void ListarProdutos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
