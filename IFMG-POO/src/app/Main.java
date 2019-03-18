@@ -22,6 +22,10 @@ public class Main {
     public static String input(String title){
         return JOptionPane.showInputDialog(title);
     }
+    
+    public static void output(String title){
+        JOptionPane.showMessageDialog(null, title);
+    }
 
     /**
      * @param args the command line arguments
