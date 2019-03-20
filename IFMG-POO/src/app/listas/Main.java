@@ -31,15 +31,15 @@ public class Main {
         produtos.add(new Produto("caneta", 20));
         produtos.add(new Produto("borracha", 50));
         
-        //Ordernar de forma padrao
-        Collections.sort(produtos);
-        
-        Collections.sort(produtos, new Comparator<>() {
-            @Override
-            public int compare(Produto o1, Produto o2) {
-                return o1.getDesc().compareTo(o2.getDesc());
-            }
-        });
+//        //Ordernar de forma padrao
+//        Collections.sort(produtos);
+//        
+//        Collections.sort(produtos, new Comparator<>() {
+//            @Override
+//            public int compare(Produto o1, Produto o2) {
+//                return o1.getDesc().compareTo(o2.getDesc());
+//            }
+//        });
     }
     
 }

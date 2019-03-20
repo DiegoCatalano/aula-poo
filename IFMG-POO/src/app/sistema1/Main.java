@@ -21,6 +21,8 @@ public class Main {
     //Declarei a lista de clientes fora do escopo da main
     static List<Cliente> clientes = new ArrayList<>();
     static List<Produto> produtos = new ArrayList<>();
+    static List<Produto> produtosEscolhidos = new ArrayList<>();
+    static List<Venda> vendidos = new ArrayList<>();
     
     public static String input(String titulo){
         return JOptionPane.showInputDialog(titulo);
@@ -62,6 +64,7 @@ public class Main {
             //Listar as descricoes de todos os produtos em que o valor informado seja maior do que x
             System.out.println("4 - Listar produtos >= x");
             //TODO: Cadastrar venda para os clientes
+            System.out.println("5 - Venda");
             
             op = input("Digite uma opção ?");
             switch(op){
@@ -73,9 +76,13 @@ public class Main {
                 break;
                 case "3":
                     Cliente cli = ConsultarCpf();
+                    System.out.println("Nome do cliente: " + cli.getNome());
                 break;
                 case "4":
                     ListarProdutos();
+                break;
+                case "5":
+                    efetuarVenda();
                 break;
             }
             
@@ -130,6 +137,43 @@ public class Main {
         return aux;
         
         
+    }
+
+    private static Produto escolherProduto() {
+        int i = 0;
+        System.out.println("Lista de produtos cadastrados");
+        for (Produto produto : produtos) {
+            System.out.println(i + " - " + produto.getDesc());
+            i++;
+        }
+        
+        int posicao = Integer.valueOf(input("Digite o numero do produto que voce quer comprar: "));
+        
+        return produtos.get(posicao);
+        
+    }
+
+    private static Cliente escolherCliente() {
+        int i = 0;
+        
+        System.out.println("Lista de clientes cadastrados");
+        for (Cliente cliente : clientes) {
+            System.out.println(i + " - " + cliente.getNome());
+            i++;
+        }
+        
+        int posicao = Integer.valueOf(input("Digite o numero do cliente que vai fazer as compras: "));
+        
+        return clientes.get(posicao);
+    }
+
+    private static void efetuarVenda() {
+        int opcao = 1;
+        while (opcao!=0) {
+            produtosEscolhidos.add(escolherProduto());
+            opcao = Integer.valueOf(input("Deseja continuar? (0 - nao / 1 - sim)"));
+        }
+        vendidos.add(new Venda(1, escolherCliente(), produtosEscolhidos));
     }
     
 }
