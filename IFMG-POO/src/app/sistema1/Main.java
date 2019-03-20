@@ -34,9 +34,11 @@ public class Main {
     public static void main(String[] args) {
         
         clientes.add(new Cliente("diego", "123", 20));
+        clientes.add(new Cliente("mateus", "456", 20));
         produtos.add(new Produto("lapis", 30));
         produtos.add(new Produto("caneta", 20));
         produtos.add(new Produto("borracha", 50));
+        produtos.add(new Produto("notebook", 1000));
         
         //Collections.sort(produtos);
         Collections.sort(produtos, new Comparator<Produto>() {
@@ -53,6 +55,7 @@ public class Main {
         
         String op = "";
         while(!op.equals("0")){
+            System.out.println("");
             System.out.println("Sistema de vendas");
             System.out.println();
             System.out.println("Opções");
@@ -162,18 +165,31 @@ public class Main {
             i++;
         }
         
-        int posicao = Integer.valueOf(input("Digite o numero do cliente que vai fazer as compras: "));
+        int posicao;
+        do{            
+            posicao = Integer.valueOf(input("Digite o numero do cliente que vai fazer as compras: "));
+        }while((posicao<0)||(posicao>=clientes.size()));
         
         return clientes.get(posicao);
+        
+        
     }
 
     private static void efetuarVenda() {
         int opcao = 1;
+        Cliente auxCliente = escolherCliente();
         while (opcao!=0) {
             produtosEscolhidos.add(escolherProduto());
             opcao = Integer.valueOf(input("Deseja continuar? (0 - nao / 1 - sim)"));
         }
-        vendidos.add(new Venda(1, escolherCliente(), produtosEscolhidos));
+        vendidos.add(new Venda(1, auxCliente, produtosEscolhidos));
+        for (Venda v : vendidos) {
+            System.out.println("O cliente " + v.getCliente().getNome() + " comprou:");
+            int i;
+            for(i=0; i<vendidos.size(); i++){
+                System.out.println(v.getProdutos().get(i).getDesc());
+            }
+        }
     }
     
 }
